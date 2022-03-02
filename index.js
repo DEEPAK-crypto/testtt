@@ -6,6 +6,10 @@ var bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
+app.get("/", (req, res) => {
+  res.send("Server running");
+});
+
 app.post("/bfhl", (req, res) => {
   var arr = req.body.data;
   var nums = [];
